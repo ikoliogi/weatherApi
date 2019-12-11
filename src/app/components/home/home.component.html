@@ -1,0 +1,10 @@
+<input type="text" placeholder="enter city name.." [(ngModel)]="city" [ngModelOptions]="{standalone: true}">
+<button (click)="getWeather(city)">Submit</button>
+
+<div [hidden]="hideTable">
+    <div>Weather in <span>{{ mycity }}</span></div>
+    <div>Current Weather: <span>{{ weatherDesc }}</span></div>
+    <div>Current Temperature: <span>{{ temperature }}°C</span></div>
+    <div>Max Temperature: <span>{{ maxTemperature }}°C</span></div>
+    <div>Min Temperature: <span>{{ minTemperature }}°C</span></div>
+</div>
