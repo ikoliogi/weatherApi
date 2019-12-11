@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -20,16 +19,13 @@ export class HomeComponent implements OnInit {
   public hideTable = true;
 
   constructor(
-    private http: HttpClient,
-    private route: ActivatedRoute
+    private http: HttpClient
   ) { }
 
   ngOnInit() {
   }
 
   public getWeather(city){
-
-    this.route.params.subscribe(params => {
 
       this.http.get('https://api.openweathermap.org/data/2.5/weather?q='+city+'&APPID=API_KEY')
       .subscribe(res => {
@@ -44,7 +40,6 @@ export class HomeComponent implements OnInit {
           console.log(res);
         }
       });
-    })
   }
 
 }
